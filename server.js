@@ -8,7 +8,11 @@ const imageRouter = require("./routers/imageRouter.js");
 
 const dotenv = require("dotenv");
 dotenv.config();
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 const PORT = process.env.PORT;
 const connectDB = require("./db/connect.js");
